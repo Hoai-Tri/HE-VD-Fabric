@@ -1,0 +1,46 @@
+{
+    "name": "he-fabric_gw",
+    "version": "1.0.0",
+    "client": {
+        "organization": "org1-insurance-com",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "organizations": {
+        "org1-insurance-com": {
+            "mspid": "org1-insurance-com",
+            "peers": [
+                "peer1.org1.insurance.com"
+            ],
+            "certificateAuthorities": [
+                "ca1.org1.insurance.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer1.org1.insurance.com": {
+            "url": "grpcs://172.21.205.165:7002",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIC0DCCAnagAwIBAgIUV7L4QVD4VSfCbIqSs7JTX59vtlYwCgYIKoZIzj0EAwIw\neTELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRswGQYDVQQKDBJvcmcxLmluc3VyYW5jZS5jb20xIjAgBgNVBAMM\nGXRsc2NhMS5vcmcxLmluc3VyYW5jZS5jb20wHhcNMjUwMTI5MDkyNTIyWhcNMzUw\nMTI3MDkyNTIyWjB5MQswCQYDVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xp\nbmExEDAOBgNVBAcMB1JhbGVpZ2gxGzAZBgNVBAoMEm9yZzEuaW5zdXJhbmNlLmNv\nbTEiMCAGA1UEAwwZdGxzY2ExLm9yZzEuaW5zdXJhbmNlLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABP4BY5QOfkHIaBsliHCu0UHURiv/hSdMPrfcw2/wVCVZ\nAEKEZ8/15YxmQCNqH60ohqtf5K7QTyRLNEXjouCFPnajgdswgdgwHQYDVR0OBBYE\nFG59/hd5MXr8z+rlTjft9HqQDkZKMB8GA1UdIwQYMBaAFG59/hd5MXr8z+rlTjft\n9HqQDkZKMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQW\nMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBWBgNVHREETzBNhwSsFc2lghl0bHNjYTEu\nb3JnMS5pbnN1cmFuY2UuY29tghl0bHNjYTEtb3JnMS1pbnN1cmFuY2UtY29tggls\nb2NhbGhvc3SHBH8AAAEwCgYIKoZIzj0EAwIDSAAwRQIgc4R4GUpdRSqESG0ua4Sl\n6GFBG3k1sB0OoyTYxbdjYt0CIQCp1+zMcDMsJTEL10kSQZU0Go8H+JNA8aqEt3AT\nPGqVOg==\n-----END CERTIFICATE-----"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.org1.insurance.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca1.org1.insurance.com": {
+            "url": "https://172.21.205.165:7000",
+            "caName": "ca1.org1.insurance.com",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICwzCCAmqgAwIBAgIUGwMNnJuP06KyFP97UQpVG6qGDHkwCgYIKoZIzj0EAwIw\ndjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRswGQYDVQQKDBJvcmcxLmluc3VyYW5jZS5jb20xHzAdBgNVBAMM\nFmNhMS5vcmcxLmluc3VyYW5jZS5jb20wHhcNMjUwMTI5MDkyNTIxWhcNMzUwMTI3\nMDkyNTIxWjB2MQswCQYDVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmEx\nEDAOBgNVBAcMB1JhbGVpZ2gxGzAZBgNVBAoMEm9yZzEuaW5zdXJhbmNlLmNvbTEf\nMB0GA1UEAwwWY2ExLm9yZzEuaW5zdXJhbmNlLmNvbTBZMBMGByqGSM49AgEGCCqG\nSM49AwEHA0IABE1u/Y2lGZcuUvlqJgCm/2jIY/isVvCb+E6lwii6KKxum60l4Oal\nFoVZrTTFun7plf2D3cnT1NBJ9MCxEjoo4oqjgdUwgdIwHQYDVR0OBBYEFOUDKnvr\ntik9MRKGJblTWD4POb8cMB8GA1UdIwQYMBaAFOUDKnvrtik9MRKGJblTWD4POb8c\nMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsG\nAQUFBwMBBggrBgEFBQcDAjBQBgNVHREESTBHhwSsFc2lghZjYTEub3JnMS5pbnN1\ncmFuY2UuY29tghZjYTEtb3JnMS1pbnN1cmFuY2UtY29tgglsb2NhbGhvc3SHBH8A\nAAEwCgYIKoZIzj0EAwIDRwAwRAIgBO3xGcHv0BGGApMnMKxhyHU+m92XXX9l6mRB\nmlxYMzQCIDPwPDJCoVsZc+p5yOkrYwiWWmBGydkOH1wHXzYR29Zd\n-----END CERTIFICATE-----"
+            }
+        }
+    }
+}

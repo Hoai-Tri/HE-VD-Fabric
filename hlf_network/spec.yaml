@@ -1,0 +1,36 @@
+fabric:
+  # Define the Certificate Authorities (CAs) for the organizations
+  cas:
+  - "ca1.org1.insurance.com"
+  - "ca1.org2.vehicleowners.com"
+  
+  # Define the peers for each organization
+  peers: 
+  - "peer1.org1.insurance.com"
+  - "peer2.org1.insurance.com"
+  - "peer1.org2.vehicleowners.com"
+  - "peer2.org2.vehicleowners.com"
+  
+  # Define the orderers for transaction ordering and network consensus
+  orderers:
+  - "orderer1.insurance.com"
+  - "orderer2.insurance.com"
+  - "orderer3.insurance.com"
+  
+  # Set up logging levels for different components
+  settings:
+    ca:
+      FABRIC_LOGGING_SPEC: ERROR
+    peer:
+      FABRIC_LOGGING_SPEC: INFO
+    orderer:
+      FABRIC_LOGGING_SPEC: DEBUG
+  
+  ### Assign Docker network name to avoid conflicts when multiple networks are present
+  netname: "he-fabric"
+
+  ### Set additional container options for better resource management and logging
+  container_options: "--restart=always --log-opt max-size=10m --log-opt max-file=3"
+
+  ### Optional: Uncomment to set a specific Go proxy if necessary
+  # goproxy: "https://proxy.golang.org,direct"
