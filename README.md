@@ -6,8 +6,8 @@ This project implements a **blockchain-based privacy-preserving insurance platfo
 ## Project Structure
 ```
 📦 Project Root
-├── 📂 frontend       # Frontend (Node.js)
-├── 📂 backend        # Backend (React.js)
+├── 📂 frontend       # Frontend (React.js)
+├── 📂 backend        # Backend (Node.js)
 ├── 📂 hlf_network    # Hyperledger Fabric Network (Minifabric)
 ```
 
